@@ -1,12 +1,12 @@
-
+import { BrowserRouter } from "react-router-dom"
+import Sidebar from "./components/Sidebar"
 function App() {
-
   return (
-    <>
-      <h1 className='text-5xl underline'>
-        Hello World
-      </h1>
-    </>
+    <BrowserRouter>
+      <div className="flex h-screen">
+        <Sidebar />
+      </div>
+    </BrowserRouter>
   )
 }
 
