@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
+import { useFilter } from "./FilterContext";
 
 interface Product {
   category: string;
@@ -10,6 +11,19 @@ interface FetchResponse {
 
 
 const Sidebar = () => {
+  const {
+    searchQuery,
+    setSearchQuery,
+    selectCategory,
+    setSelectCategory,
+    minPrice,
+    setMinPrice,
+    maxPrice,
+    setMaxPrice,
+    keyword,
+    setKeyword
+  } = useFilter()
+
   const [categories, setCategories] = useState<string[]>([]);
   const [keywords] = useState<string[]>([
     "apple",
@@ -36,6 +50,32 @@ const Sidebar = () => {
     fetchCategories();
   }, [])
 
+  const handleMinPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setMinPrice(value ? parseFloat(value) : undefined)
+  }
+
+  const handleMaxPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setMaxPrice(value ? parseFloat(value) : undefined)
+  }
+
+  const handleRadioChangeCategory = (category: string) => {
+    setSelectCategory(category)
+  }
+
+  const handleKeyWordClick = (keyword: string) => {
+    setKeyword(keyword)
+  }
+
+  const handleResetFilters = () => {
+    setSearchQuery('')
+    setSelectCategory('')
+    setMaxPrice(undefined)
+    setMinPrice(undefined)
+    setKeyword('')
+  }
+
 
   return (
     <div className="w-64 p-5 h-screen">
@@ -44,12 +84,28 @@ const Sidebar = () => {
 
 
       <section>
-        <input type="text" className="border-2 rounded px-2 sm:mb-0" placeholder="Search Product" />
+        <input
+          type="text"
+          className="border-2 rounded px-2 sm:mb-0"
+          placeholder="Search Product"
+          value={searchQuery}
+          onChange={e => setSearchQuery(e.target.value)}
+        />
 
 
         <div className="flex justify-center items-center">
-          <input type="text" className="border-2 mr-2 py-3 px-5 mb-3 w-full" placeholder="Min" />
-          <input type="text" className="border-2 mr-2 py-3 px-5 mb-3 w-full" placeholder="Max" />
+          <input
+            type="text"
+            className="border-2 mr-2 py-3 px-5 mb-3 w-full" placeholder="Min"
+            value={minPrice ?? ''}
+            onChange={handleMinPriceChange}
+          />
+          <input
+            type="text"
+            className="border-2 mr-2 py-3 px-5 mb-3 w-full" placeholder="Max"
+            value={maxPrice ?? ""}
+            onChange={handleMaxPriceChange}
+          />
         </div>
 
 
@@ -62,7 +118,15 @@ const Sidebar = () => {
         <section>
           {categories.map((category, index) => (
             <label key={index} className="block mb-2">
-              <input type="radio" name="category" value={category} className="mr-2 w-[17px] h-[17px]" />{category.toLocaleUpperCase()}
+              <input
+                type="radio"
+                name="category"
+                value={category}
+                className="mr-2 w-[17px] h-[17px]"
+                onChange={() => handleRadioChangeCategory(category)}
+                checked={selectCategory === category}
+              />
+              {category.toLocaleUpperCase()}
             </label>
           ))}
         </section>
@@ -72,14 +136,19 @@ const Sidebar = () => {
           <h2 className="text-xl font-semibold mb-3">Keywords</h2>
           <div>
             {keywords.map((keyword, index) => (
-              <button className="blog mb-2 px-4 w-full py-2 text-left border rounded hover:bg-gray-200" key={index}>{keyword.toLocaleUpperCase()}</button>
+              <button
+                className="blog mb-2 px-4 w-full py-2 text-left border rounded hover:bg-gray-200"
+                key={index}
+                onClick={() => handleKeyWordClick(keyword)}
+              >
+                {keyword.toLocaleUpperCase()}</button>
             ))}
           </div>
         </div>
 
 
 
-        <button className="w-full mb-[4rem] py-2 cursor-pointer bg-black text-white rounded mt-5">Reset Filters</button>
+        <button onClick={handleResetFilters} className="w-full mb-[4rem] py-2 cursor-pointer bg-black text-white rounded mt-5">Reset Filters</button>
 
       </section>
     </div>
