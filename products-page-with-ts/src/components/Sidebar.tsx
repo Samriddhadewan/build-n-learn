@@ -39,11 +39,9 @@ const Sidebar = () => {
       try {
         const response = await fetch('https://dummyjson.com/products');
         const data: FetchResponse = await response.json();
-        console.log(data)
         const uniqueCategories = Array.from(new Set(data.products.map(product => product.category)))
         setCategories(uniqueCategories)
       } catch (error) {
-        console.error('Error fetching product', error)
       }
     }
 
