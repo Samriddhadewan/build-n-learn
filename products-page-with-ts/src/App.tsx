@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Sidebar from "./components/Sidebar"
 import MainContent from "./components/MainContent"
 import ProductPage from "./components/ProductPage"
+import TopSellers from "./components/TopSellers"
+import PopularBlogs from "./components/PopularBlogs"
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +16,10 @@ function App() {
           <Route path="/" element={<MainContent />}></Route>
           <Route path="/product/:id" element={<ProductPage />}></Route>
         </Routes>
+        <div>
+        <TopSellers />
+        <PopularBlogs />  
+        </div>
       </div>
 
       </div>
