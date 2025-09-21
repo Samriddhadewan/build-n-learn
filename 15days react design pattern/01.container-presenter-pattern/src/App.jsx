@@ -1,9 +1,10 @@
 import UserProfile from "./messy-way/components/UserProfile";
 import "./App.css"
+import UserProfileContainer from "./pattern-way/components/UserProfileContainer";
 function App() {
   return (
     <div className="">
-      <UserProfile userId={2} />
+      <UserProfileContainer userId={2} />
     </div>
   );
 }
