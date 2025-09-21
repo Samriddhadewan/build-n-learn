@@ -42,9 +42,8 @@ const UserProfileContainer = ({ userId }) => {
     }
   };
 
-
-  // updating user 
-   const handleUpdateUser = async (updatedUserData) => {
+  // updating user
+  const handleUpdateUser = async (updatedUserData) => {
     try {
       const response = await axios.put(
         `${import.meta.env.VITE_API_BASE_URL}/api/users/${userId}`,

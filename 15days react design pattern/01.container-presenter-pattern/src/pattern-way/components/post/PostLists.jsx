@@ -1,4 +1,4 @@
-import PostCard from "./common/PostCard"
+import PostCard from "./PostCard"
 
 const PostLists = ({posts}) => {
   return (
