@@ -42,6 +42,21 @@ const UserProfileContainer = ({ userId }) => {
     }
   };
 
+
+  // updating user 
+   const handleUpdateUser = async (updatedUserData) => {
+    try {
+      const response = await axios.put(
+        `${import.meta.env.VITE_API_BASE_URL}/api/users/${userId}`,
+        updatedUserData
+      );
+      setUser(response.data);
+      return { success: true };
+    } catch (err) {
+      return { success: false, error: "Failed to update profile" };
+    }
+  };
+
   //   Retrying to get the user data
   const handleRetry = () => {
     fetchUserData();
@@ -54,6 +69,7 @@ const UserProfileContainer = ({ userId }) => {
       loading={loading}
       error={error}
       onRetry={handleRetry}
+      onUpdateUser={handleUpdateUser}
     />
   );
 };
