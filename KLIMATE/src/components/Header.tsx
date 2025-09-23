@@ -26,8 +26,8 @@ const Header = () => {
 
 
                     {/* Theme Toggle */}
-                    <div className={`cursor-pointer flex items-center transition-transform duration-500 ${isDark? `rotate-180`: `rotate-0`}`} onClick={() => setTheme(isDark ? "light" : "dark")}>
-                        {isDark ? (<Sun className='h-6 w-6 text-yellow-500 rotate-0 transition-all' />): (<Moon className='h-6 w-6 text-blue-500 transition-all rotate-0' />) }
+                    <div className={`cursor-pointer flex items-center transition-transform duration-500 ${isDark ? `rotate-180` : `rotate-0`}`} onClick={() => setTheme(isDark ? "light" : "dark")}>
+                        {isDark ? (<Sun className='h-6 w-6 text-yellow-500 rotate-0 transition-all' />) : (<Moon className='h-6 w-6 text-blue-500 transition-all rotate-0' />)}
                     </div>
                 </div>
             </div>
