@@ -7,7 +7,7 @@ import type {
 } from "./types";
 
 class WeatherAPI {
-  // creating urls
+  //--------------- creating urls ----------------
   private createUrl(endpoint: string, params: Record<string, string | number>) {
     const searchParams = new URLSearchParams({
       appid: API_CONFIG.API_KEY,
@@ -17,7 +17,7 @@ class WeatherAPI {
     return `${endpoint}?${searchParams.toString()}`;
   }
 
-  //   fetching data
+  //   --------------------- fetching data ------------------
   private async fetchData<T>(url: string): Promise<T> {
     const response = await fetch(url);
 
@@ -28,7 +28,7 @@ class WeatherAPI {
     return response.json();
   }
 
-  //   Current weather data api
+  //  ----------------- Current weather data api ---------------------
   async getCurrentWeather({ lat, lon }: Coordinates): Promise<WeatherData> {
     const url = this.createUrl(`${API_CONFIG.BASE_URL}/weather`, {
       lat: lat.toString(),
@@ -39,7 +39,7 @@ class WeatherAPI {
     return this.fetchData<WeatherData>(url);
   }
 
-  //   getting the foreCast data
+  //  -------------- getting the foreCast data --------------------
   async getForeCast({ lat, lon }: Coordinates): Promise<ForeCastData> {
     const url = this.createUrl(`${API_CONFIG.BASE_URL}/forecast`, {
       lat: lat.toString(),
@@ -50,7 +50,7 @@ class WeatherAPI {
     return this.fetchData<ForeCastData>(url);
   }
 
-  //   getting data in the reverse geocode
+  //   getting data in the reverse geocode ----------------
   async reverseGeocode({
     lat,
     lon,

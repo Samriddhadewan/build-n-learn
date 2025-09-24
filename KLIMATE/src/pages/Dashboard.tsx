@@ -1,3 +1,5 @@
+import CurrentWeather from "@/components/CurrentWeather";
+import HourlyTemprature from "@/components/HourlyTemprature";
 import WeatherSkeleton from "@/components/loading-skeleton";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button"
@@ -11,7 +13,7 @@ const Dashboard = () => {
   const locationQuery = useReverseGeolocationQuery(coordinates);
   const weatherQuery = useWeatherQuery(coordinates);
   const forecastQuery = useForecastQuery(coordinates);
-
+  const locationName = locationQuery.data?.[0];
 
   const handleRefresh = () => {
     getLocation();
@@ -21,7 +23,6 @@ const Dashboard = () => {
       forecastQuery.refetch()
     }
   }
-
 
   if (locationError) {
     return <Alert variant="destructive">
@@ -37,7 +38,6 @@ const Dashboard = () => {
     </Alert>
   }
 
-
   if (!coordinates) {
     return <Alert variant="destructive">
       <AlertCircle className="h-4 w-4" />
@@ -52,14 +52,8 @@ const Dashboard = () => {
     </Alert>
   }
 
-
   if (locationLoading)
     return <WeatherSkeleton />
-
-
-  const location = locationQuery.data?.[0];
-
-  console.log(location?.name)
 
   if (weatherQuery.error || forecastQuery.error) {
     return <Alert variant="destructive">
@@ -94,6 +88,21 @@ const Dashboard = () => {
       </div>
 
       {/* current and hourly weather  */}
+      <div className="grid gap-6">
+        <div className="flex flex-col lg:flex-row gap-4">
+          {/* current weather  */}
+          <CurrentWeather
+            data={weatherQuery.data}
+            locationName={locationName} />
+          {/* hourly temperature  */}
+
+          <HourlyTemprature data={forecastQuery.data} />
+        </div>
+        <div>
+          {/* details  */}
+          {/* forecast  */}
+        </div>
+      </div>
     </div>
   )
 }
