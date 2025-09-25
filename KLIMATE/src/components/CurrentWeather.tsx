@@ -8,7 +8,7 @@ interface CurrentWeatherProps {
     location: GeocodingResponse;
 }
 
-const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
+const CurrentWeather = ({ data, location }: CurrentWeatherProps) => {
     console.log(data)
     const { weather: [currentWeather], main: { temp, feels_like, temp_min, temp_max, humidity }, wind: { speed } } = data;
 

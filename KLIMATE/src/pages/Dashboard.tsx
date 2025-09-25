@@ -94,7 +94,7 @@ const Dashboard = () => {
           {/* current weather  */}
           <CurrentWeather
             data={weatherQuery.data}
-            locationName={locationName} />
+            location={locationName} />
           {/* hourly temperature  */}
 
           <HourlyTemprature data={forecastQuery.data} />
