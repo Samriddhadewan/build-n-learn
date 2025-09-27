@@ -2,12 +2,7 @@ import useProduct from "../hooks/useProducts";
 import ProductPresenters from "../presenters/ProductPresenters";
 
 const ProductContainer = () => {
-  const {
-    products,
-    categories,
-    loading,
-    error,
-  } = useProduct();
+  const { products, categories, loading, error } = useProduct();
   return (
     <div>
       <ProductPresenters

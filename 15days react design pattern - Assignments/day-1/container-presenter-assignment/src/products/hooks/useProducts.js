@@ -35,5 +35,6 @@ export default function useProduct() {
     categories,
     loading,
     error,
+    load
   };
 }
