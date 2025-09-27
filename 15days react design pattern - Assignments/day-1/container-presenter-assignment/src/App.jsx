@@ -1,6 +1,10 @@
+import ProductContainer from "./products/containers/ProductContainer";
+
 function App() {
   return (
-   <p>Hello World</p>
+   <div>
+    <ProductContainer />
+   </div>
   );
 }
 
