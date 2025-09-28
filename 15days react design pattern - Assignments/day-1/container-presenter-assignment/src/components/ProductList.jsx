@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { useState } from "react";
+import ProductCard from "./ProductCard";
 
 const ProductList = ({ products, categories, loading, error }) => {
   const [category, setCategory] = useState("");
@@ -42,6 +43,13 @@ const ProductList = ({ products, categories, loading, error }) => {
               </button>
             </div>
           ))}
+      </div>
+
+      {/* products here  */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 my-3">
+          {
+            filteredProducts.map((product) => (<ProductCard key={product.name} product={product} /> ))
+          }
       </div>
     </div>
   );

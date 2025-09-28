@@ -25,7 +25,6 @@ export default function useProduct() {
     }
   };
 
-  
   useEffect(() => {
     load();
   }, []);
@@ -35,6 +34,6 @@ export default function useProduct() {
     categories,
     loading,
     error,
-    load
+    load,
   };
 }

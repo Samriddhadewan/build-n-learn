@@ -2,16 +2,7 @@ import Navbar from "../../components/Navbar";
 import ProductList from "../../components/ProductList";
 
 // eslint-disable-next-line react/prop-types
-const ProductPresenters = ({ products, categories, loading, error, load }) => {
-  if (error)
-    return (
-      <div>
-        <p>{error}</p>
-        <button onClick={load} className="btn">
-          Retry
-        </button>
-      </div>
-    );
+const ProductPresenters = ({ products, categories, loading, error}) => {
 
     if(loading) return <p>Loading.....</p>
   return (
