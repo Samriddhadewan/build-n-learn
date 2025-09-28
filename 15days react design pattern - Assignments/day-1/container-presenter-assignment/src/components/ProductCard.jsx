@@ -1,4 +1,5 @@
 const ProductCard = ({ product, addToCart }) => {
+  // eslint-disable-next-line react/prop-types
   const { imageUrl, name, price, category, rating } = product;
 
   return (

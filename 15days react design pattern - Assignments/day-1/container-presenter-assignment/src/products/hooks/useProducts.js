@@ -15,9 +15,10 @@ export default function useProduct() {
         fetchProducts(),
         fetchCategories(),
       ]);
-
+    
       setProducts(productData);
       setCategories(categoryData);
+    
     } catch (error) {
       setError(error.message);
     } finally {
