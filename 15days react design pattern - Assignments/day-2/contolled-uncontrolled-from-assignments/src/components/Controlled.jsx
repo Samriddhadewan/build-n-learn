@@ -4,9 +4,8 @@ const Controlled = () => {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
   });
-
 
   const nameRef = useRef();
   const emailRef = useRef();
@@ -19,25 +18,28 @@ const Controlled = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(!form.name){
-        nameRef.current.focus();
-        return;
+    if (!form.name) {
+      nameRef.current.focus();
+      return;
     }
-    if(!form.email.includes("@")){
-        emailRef.current.focus();
-        return;
+    if (!form.email.includes("@")) {
+      emailRef.current.focus();
+      return;
     }
-    if(!form.message){
-        messageRef.current.focus();
-        return
+    if (!form.message) {
+      messageRef.current.focus();
+      return;
     }
 
-    console.log("form submitted :",form)
+    console.log("form submitted :", form);
   };
 
   return (
     <div className="flex items-center  justify-center border ">
-      <form onSubmit={handleSubmit} className="flex flex-col w-[300px] border p-4 my-2">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col w-[300px] border p-4 my-2"
+      >
         <input
           ref={nameRef}
           type="text"
