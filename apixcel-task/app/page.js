@@ -1,11 +1,13 @@
-import Navbar from "@/components/shared/Navbar"
+import BannerSection from "@/components/BannerSection";
+import Navbar from "@/components/shared/Navbar";
 
 const page = () => {
   return (
-    <div className="px-3 lg:px-0 bg-[#151515] py-4 text-white min-h-screen">
+    <div className="px-3 lg:px-0 bg-[#171717] py-4 text-white min-h-screen">
       <Navbar />
+      <BannerSection />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
