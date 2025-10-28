@@ -3,7 +3,7 @@ import Image from "next/image";
 const BannerSection = () => {
   return (
     <div className="relative overflow-x-hidden min-h-[50vh] sm:min-h-[80vh] flex items-center justify-center">
-      <div className="w-7xl z-20">
+      <div className="w-2xl md:w-5xl z-20">
         <h1 className="text-4xl sm:text-[100px] text-center font-semibold leading-[1.4] sm:leading-[1.1]">
           Ain&apos;t{" "}
           <span className="bg-[#B341FF] px-5 py-1 rounded-full">Nobody</span>{" "}
@@ -97,7 +97,7 @@ const BannerSection = () => {
             height={20}
             width={30}
             alt="thunderImageSmall"
-            className="h-[100px]"
+            className="h-[50px]"
           />
           <Image
             src="/assets/images/image8.png"
