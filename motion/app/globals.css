@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -10,10 +10,11 @@
 .container {
   max-width: 300px;
   margin: 0 auto;
+  position: relative;
 }
 
 .layout {
-  height: 100vh;
+  height: 100%;
   background-image: linear-gradient(
     to bottom,
     white,
@@ -81,7 +82,7 @@
   transition: background-color 0.2s ease-out;
 }
 
-.hero-title{
+.hero-title {
   font-size: 25px;
   font-weight: bold;
   color: oklch(20.5% 0 0);
@@ -90,22 +91,22 @@
   line-height: 1.1;
   margin-top: 20px;
 }
-.hero-subTitle{
+.hero-subTitle {
   color: #737373;
   font-size: 8px;
   text-align: center;
-   font-family: "Manrope", sans-serif;
-   max-width: 200px;
-   margin: 10px auto;
+  font-family: "Manrope", sans-serif;
+  max-width: 200px;
+  margin: 10px auto;
 }
 
-.hero-cta{
+.hero-cta {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
 }
-.btn-secondary{
+.btn-secondary {
   all: unset;
   font-size: 8px;
   color: black;
@@ -119,4 +120,57 @@
   &:hover {
     background-color: oklch(97% 0.001 106.424);
   }
+}
+.layout-lines-container{
+  position: absolute;
+  border-top-left-radius: 10px solid red ;
+  margin: 0 auto;
+  max-width: 300px;
+  height: 100%;
+  inset: 0;
+}
+.left-line {
+  height: 100%;
+  width: 0.5px;
+  background: linear-gradient(
+    to bottom,#d4d4d4, #d4d4d4, #f5f5f5f5
+  );
+  position: absolute;
+  left: -10px;
+  opacity: 0.5;
+}
+.right-line {
+  height: 100%;
+  width: 0.5px;
+
+  background: linear-gradient(
+    to bottom,#d4d4d4, #d4d4d4, #f5f5f5f5
+  );
+  position: absolute;
+  right: -10px;
+  opacity: 0.5;
+}
+.hero-img-container{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-items: center;
+}
+
+.hero-img {
+  width: 300px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius:4px;
+  box-shadow: 0px 4px 10px rgba(0, 2, 0, 0.25);
+  object-fit: cover;
+  object-position: top left;
+}
+.horizontal-line {
+  height: 0.5px;
+  width: 100%;
+  background: #d4d4d4d4;
+  position: absolute;
+  top: -10px;
+  opacity: 0.5;
 }
