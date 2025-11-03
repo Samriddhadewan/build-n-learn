@@ -12,43 +12,24 @@ const canAccess = currentUser.some((user) => requiredUser.includes(user));
 const arr = Array.from({ length: 5 }, (value, idx) => idx);
 // console.log(arr)
 
-const arr2 = Array.from([1,2,3], (value,idx)=>  value + idx )
-console.log(arr2)
+const arr2 = Array.from([1, 2, 3], (value, idx) => value + idx);
+console.log(arr2);
+
+const range = (start, end, step) =>
+  Array.from(
+    {
+      length: Math.ceil((end - start) / step),
+    },
+    (_, idx) => start + idx * step
+  );
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  console.log(range(1, 11, 2));
 
 // // range function in js
-// const range = (start, end, step) =>
-//   Array.from(
-//     { length: Math.ceil((end - start) / step) },
-//     (value, idx) => start + idx * step
-//   );
+const rangeTwo = (start, end, step) =>
+  Array.from(
+    { length: Math.ceil((end - start) / step) },
+    (value, idx) => start + idx * step
+  );
 
-// console.log(range(1, 11, 2));
