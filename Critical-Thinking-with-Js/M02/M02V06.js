@@ -18,6 +18,8 @@ const lookupTable = books.reduce((table, data)=> {
 }, {})
 
 
+console.log(lookupTable)
+
 const findOne = lookupTable["b2"]
 
 for(let book in lookupTable){
