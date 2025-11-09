@@ -8,9 +8,12 @@ let mixedBjr : (string | number)[] = ["eggs", 21, "sugar",12,"milk"]
 mixedBjr.push(32)
 
 let coordinates : [number, number] = [22, 12];
+coordinates.push(9)
 let couple : [string, string] = ["Husband", "wife"]
 
-let nameAndRoll: [string, number] =["samriddha", 12]
+let nameAndRoll: readonly[string, number] =["samriddha", 12]
+
+console.log(nameAndRoll)
 
 // Reference type : object 
 
@@ -41,7 +44,7 @@ const user : {
     lastName : "mahabub",
     isMarried: true
 }
+user.middleName = "bhai"
 
-user.organization = 'sfsh'
 
-console.log(user)
+// console.log(user)
