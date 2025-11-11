@@ -41,4 +41,4 @@ interface IFriends {
 }
 
 const friends: IFriends = ["A", "B", "C"];
-console.log(friends)
+console.log(friends);

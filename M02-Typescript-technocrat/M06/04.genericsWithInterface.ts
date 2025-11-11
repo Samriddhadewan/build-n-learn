@@ -22,10 +22,13 @@ interface AppleWatch {
   aiSupport: boolean;
 }
 
-const poorDeveloper: Developer<BrandCharaGhori, {
-    model: string,
-    engineCapacity : number
-}> = {
+const poorDeveloper: Developer<
+  BrandCharaGhori,
+  {
+    model: string;
+    engineCapacity: number;
+  }
+> = {
   name: "Mr poor",
   salary: 20,
   device: {
@@ -38,9 +41,9 @@ const poorDeveloper: Developer<BrandCharaGhori, {
     stopwatch: true,
   },
   bike: {
-    engineCapacity:250,
-    model: "yamaha"
-  }
+    engineCapacity: 250,
+    model: "yamaha",
+  },
 };
 
 console.log(poorDeveloper);

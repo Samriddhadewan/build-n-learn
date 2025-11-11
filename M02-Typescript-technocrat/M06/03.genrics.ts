@@ -21,13 +21,13 @@ const coordinates1: GenericsWithTuples<number, number> = [20, 40];
 const coordinates2: GenericsWithTuples<string, string> = ["20", "40"];
 
 // Generics With Object
-const userList : GenericsArray<{name: string; age:number}> = [
-    {
-        name:"samriddha",
-        age: 23
-    },
-    {
-        name:"pujan",
-        age: 20
-    },
-]
+const userList: GenericsArray<{ name: string; age: number }> = [
+  {
+    name: "samriddha",
+    age: 23,
+  },
+  {
+    name: "pujan",
+    age: 20,
+  },
+];
