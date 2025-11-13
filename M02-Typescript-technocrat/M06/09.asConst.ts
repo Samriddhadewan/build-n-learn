@@ -1,5 +1,5 @@
 // Enum
-
+// as const assertion 
 // Set of fixed string Leteral ek jaigai rakhe
 
 // enum UserRoles {
@@ -9,12 +9,14 @@
 // }
 
 const UserRoles = {
-  Admin: "Admin",
-  Editor: "Editor",
-  Viewer: "Viewer",
-};
+  Admin: "ADMIN",
+  Editor: "EDITOR",
+  Viewer: "VIEWER",
+} as const ;
 
-const canEdit = (role: UserRoles) => {
+
+
+const canEdit = (role: typeof UserRoles[keyof typeof UserRoles]) => {
   if (role === UserRoles.Admin || role === UserRoles.Editor) {
     return true;
   } else return false;
