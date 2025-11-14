@@ -26,7 +26,6 @@ class Teacher extends Person {
   designation: string;
   constructor(name: string, age: number, address: string, designation: string) {
     super(name, age, address);
-
     this.designation = designation;
   }
   classKoran(hourOfClass: number) {
