@@ -17,7 +17,6 @@ const createGenericArr = <T>(value: T) => {
 const arrString = createGenericArr("apple");
 const arrNum = createGenericArr(222);
 const arrObj = createGenericArr({
-  
   name: "Samriddha",
 });
 // tuple
@@ -28,6 +27,12 @@ const createArrayTupleWithGeneric = <X, Y>(param1: X, param2: Y) => {
 
 const res1 = createArrayTupleWithGeneric(12, "dsd");
 const res2 = createArrayTupleWithGeneric(12, { name: "Mezba" });
+
+
+
+
+
+
 
 const addStudentToTheCourse = <T>(studentInfo: T) => {
   return {
