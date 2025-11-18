@@ -1,8 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap");
 @import "tailwindcss";
 
 @theme {
-    --color-primary : oklch(54.1% 0.281 293.009);
-    --font-display : "Manrope", sans-serif;
-    --font-samriddha:  "Inter", sans-serif
+  --color-primary: oklch(68.5% 0.169 237.323);
+  --font-display: "Manrope", sans-serif;
+  --font-samriddha: "Inter", sans-serif;
+
+  --shadow-samriddha : {
+    0px 2px 3px -1px rgba(0, 0, 0, 0.1),
+    0px 1px 0px 0px rgba(25, 28, 33, 0.02),
+    0px 0px 0px 1px rgba(25, 28, 33, 0.08);
+  }
 }

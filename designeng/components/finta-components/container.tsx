@@ -1,11 +1,10 @@
-import React from 'react'
-export const Container = ({ children, className
-
+import React from "react";
+export const Container = ({
+  children,
+  className,
 }: {
-    children: React.ReactNode,
-    className?: string;
+  children: React.ReactNode;
+  className?: string;
 }) => {
-    return (
-        <div className={className}>{children}</div>
-    )
-}
+  return <div className={className}>{children}</div>;
+};

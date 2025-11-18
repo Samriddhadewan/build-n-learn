@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, ".prettierrc.ts"  ],
   "exclude": ["node_modules"]
 }

@@ -1,5 +1,7 @@
 export default function page() {
   return (
-    <div>This website upholds my all designs</div>
-  )
+    <div className="flex justify-baseline">
+      This website upholds my all designs
+    </div>
+  );
 }
