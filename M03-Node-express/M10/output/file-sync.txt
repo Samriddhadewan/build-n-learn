@@ -1,0 +1,2 @@
+This is content1 
+ writing this file using in synchronous way
